@@ -13,28 +13,7 @@ import java.util.Enumeration;
 public class Vinyl
 {
 
-  Vinyl vinyl1 = new Vinyl("Sing Me a Lullaby, My Sweet Temptation", "$uicideboy$", 2022, true );
-  Vinyl vinyl2 = new Vinyl("STOP STARING AT THE SHADOWS", "$uicideboy$", 2020, true );
-  Vinyl vinyl3 = new Vinyl("My Liver Will Handle What My Heart Can't", "$uicideboy$", 2015, false );
-  Vinyl vinyl4 = new Vinyl("I Want to Die in New Orleans", "$uicideboy$", 2018, false );
-  Vinyl vinyl5 = new Vinyl("Radical $Uicide", "$uicideboy$", 2016, false );
-  Vinyl vinyl6 = new Vinyl("Dark Side Of The Clouds", "$uicideboy$", 2016, true );
-  Vinyl vinyl7 = new Vinyl("Long Term Effects of Suffering", "$uicideboy$", 2021, false );
-  Vinyl vinyl8 = new Vinyl("Eternal Grey", "$uicideboy$", 2016, false );
-  Vinyl vinyl9 = new Vinyl("7th Or St. Tammany", "$uicideboy$", 2015, true );
-  Vinyl vinyl10 = new Vinyl("Gray/Grey", "$uicideboy$", 2015, true );
-  ObservableList<String> vinyl = FXCollections.observableArrayList(
-      vinyl1.getTitle(),
-      vinyl2.getTitle(),
-      vinyl3.getTitle(),
-      vinyl4.getTitle(),
-      vinyl5.getTitle(),
-      vinyl6.getTitle(),
-      vinyl7.getTitle(),
-      vinyl8.getTitle(),
-      vinyl9.getTitle(),
-      vinyl10.getTitle()
-  );
+
   ArrayList<Vinyl> vinylList = new ArrayList<Vinyl>();
   ArrayList<Vinyl> borrowList = new ArrayList<Vinyl>();
   ArrayList<Vinyl> reservationList = new ArrayList<Vinyl>();
@@ -109,7 +88,7 @@ public class Vinyl
   }
 
   String status="";
-  public void isAvailable(Vinyl vinyl){
+  public String isAvailable(Vinyl vinyl){
     for(int i = 0; i < 9; i++){
       if (vinyl.getAvailability() == true){
         status="Available";
@@ -118,16 +97,13 @@ public class Vinyl
         status="Not available";
       }
     }
+    return status;
   }
 
   public void setAvailability(boolean available){
     this.available = new SimpleBooleanProperty(available);
   }
 
-  public ObservableList<String> getVinyl()
-  {
-    return vinyl;
-  }
 
   public void setState(State state){
     this.state = new SimpleStringProperty(state.getState());
@@ -159,7 +135,7 @@ public class Vinyl
     }
   }
 
-  public String getTitlesFromOL(){
+  /*public String getTitlesFromOL(){
     String temp = "";
     for(int i = 0; i<vinyl.size(); i++){
       temp+=vinyl.get(i);
@@ -167,6 +143,8 @@ public class Vinyl
     }
     return null;
   }
+
+   */
 
   public void returnVinyl(Vinyl vinyl){
     vinyl.setAvailability(true);

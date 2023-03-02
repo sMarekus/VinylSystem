@@ -5,21 +5,16 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class VinylViewController implements Initializable
+public class VinylViewController
 {
-
-
-  ObservableList<String> vinylList = FXCollections.observableArrayList();
   private Vinyl vinyl;
+  private VinylList vinylList;
+
 
   @FXML
   private Button aReturn;
@@ -31,7 +26,7 @@ public class VinylViewController implements Initializable
   private Button borrow;
 
   @FXML
-  private ComboBox<Vinyl> comboBox;
+  private ComboBox<String> comboBox;
 
   @FXML
   private Button listGui;
@@ -69,7 +64,7 @@ public class VinylViewController implements Initializable
 
   @FXML
   void comboBox(ActionEvent event) {
-    //comboBox = new ComboBox(vinylList);
+//    status.setText(vinylList.getVinylByName(comboBox.getValue()).isAvailable());
   }
 
   @FXML
@@ -95,7 +90,15 @@ public class VinylViewController implements Initializable
 
   }
 
-  @Override public void initialize(URL location, ResourceBundle resources)
+
+  public void initialize()
   {
+    vinylList=new VinylList();
+
+    comboBox.setItems(vinylList.vinyl);
+
+
+
+
   }
 }
