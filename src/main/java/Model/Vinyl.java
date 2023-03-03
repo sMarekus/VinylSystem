@@ -44,4 +44,8 @@ public class Vinyl
 
   }
 
+  public String getTitle()
+  {
+    return this.title;
+  }
 }
