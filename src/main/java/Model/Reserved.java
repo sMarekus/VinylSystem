@@ -11,7 +11,7 @@ public class Reserved implements State
     }
   }
 
-  @Override public void onReserved(Vinyl vinyl, String name)
+  @Override public void onReserved(Vinyl vinyl)
   {
     vinyl.setState(Vinyl.State.RESERVED);
   }

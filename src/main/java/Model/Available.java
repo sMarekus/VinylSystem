@@ -1,13 +1,13 @@
 package Model;
 
-public class Return implements State
+public class Available implements State
 {
   @Override public void onBorrow(Vinyl vinyl)
   {
     
   }
 
-  @Override public void onReserved(Vinyl vinyl, String name)
+  @Override public void onReserved(Vinyl vinyl)
   {
 
   }
