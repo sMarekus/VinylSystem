@@ -1,5 +1,6 @@
 package com.example.pokus2;
 
+import Model.Available;
 import Model.State;
 import Model.Vinyl;
 import javafx.event.ActionEvent;
@@ -15,6 +16,7 @@ public class VinylViewController
   private VinylList vinylList;
 
   private State state;
+  private Available vinylAvailable;
 
   @FXML
   private Button aReturn;
@@ -40,19 +42,22 @@ public class VinylViewController
 
   @FXML
   void aReturn(ActionEvent event) {
+    vinyl = vinylList.getVinylByName(comboBox.getValue());
     vinyl.returnVinyl();
   }
 
   @FXML
   void borrow(ActionEvent event) {
-   // vinyl.borrow(nameField.getText());
+    vinyl = vinylList.getVinylByName(comboBox.getValue());
+    vinyl.borrow(nameField.getText());
 
   }
 
   @FXML
   void comboBox(ActionEvent event) {
     //status.setText(String.valueOf(vinyl.getState(vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem()))));
-   // status.setText(String.valueOf(vinylList.getVinylByName(comboBox.getValue()).getState()));
+    vinyl = vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem());
+    status.setText(vinyl.getState().toString());
   }
 
   @FXML
@@ -67,8 +72,8 @@ public class VinylViewController
 
   @FXML
   void reserve(ActionEvent event) {
-   // vinyl.reserve(nameField.getText());
-    //System.out.println(vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem()));
+    vinyl = vinylList.getVinylByName(comboBox.getValue());
+    vinyl.reserve(nameField.getText());
   }
 
 
@@ -77,6 +82,5 @@ public class VinylViewController
     vinylList=new VinylList();
 
     comboBox.setItems(vinylList.vinyl);
-
   }
 }

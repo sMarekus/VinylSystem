@@ -17,4 +17,8 @@ public class Borrowed implements State
   {
     vinyl.setState(new Available());
   }
+
+  public String toString(){
+    return "Borrowed";
+  }
 }

@@ -21,4 +21,8 @@ public class Reserved implements State
   {
     vinyl.setState(new Return());
   }
+
+  public String toString(){
+    return "Reserved";
+  }
 }

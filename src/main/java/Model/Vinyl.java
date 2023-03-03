@@ -54,4 +54,9 @@ public class Vinyl
   public String getReservedBy() {
     return borrowedBy.get();
   }
+
+  public State getState()
+  {
+    return state;
+  }
 }

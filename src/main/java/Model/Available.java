@@ -16,4 +16,8 @@ public class Available implements State
   {
 
   }
+
+  public String toString(){
+    return "Available";
+  }
 }

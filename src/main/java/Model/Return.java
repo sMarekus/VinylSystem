@@ -13,4 +13,8 @@ public class Return implements State
   @Override public void onReserved(Vinyl vinyl){
 
   }
+
+  public String toString(){
+    return "Available";
+  }
 }

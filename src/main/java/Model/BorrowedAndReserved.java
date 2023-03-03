@@ -20,4 +20,8 @@ public class BorrowedAndReserved implements State
       vinyl.reserve(vinyl.getReservedBy());
     }
   }
+
+  public String toString(){
+    return "Borrowed and Reserved";
+  }
 }
