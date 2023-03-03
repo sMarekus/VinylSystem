@@ -45,14 +45,14 @@ public class VinylViewController
 
   @FXML
   void borrow(ActionEvent event) {
-    vinyl.borrow(nameField.getText());
+   // vinyl.borrow(nameField.getText());
 
   }
 
   @FXML
   void comboBox(ActionEvent event) {
     //status.setText(String.valueOf(vinyl.getState(vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem()))));
-    status.setText(String.valueOf(vinylList.getVinylByName(comboBox.getValue()).getState()));
+   // status.setText(String.valueOf(vinylList.getVinylByName(comboBox.getValue()).getState()));
   }
 
   @FXML
@@ -67,7 +67,7 @@ public class VinylViewController
 
   @FXML
   void reserve(ActionEvent event) {
-    vinyl.reserve(nameField.getText());
+   // vinyl.reserve(nameField.getText());
     //System.out.println(vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem()));
   }
 

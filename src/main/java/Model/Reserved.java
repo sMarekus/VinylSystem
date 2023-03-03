@@ -17,6 +17,6 @@ public class Reserved implements State
 
   @Override public void onReturn(Vinyl vinyl)
   {
-    vinyl.setState(new VinylAvailable());
+    vinyl.setState(new Available());
   }
 }

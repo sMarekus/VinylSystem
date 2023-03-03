@@ -4,12 +4,12 @@ public class Available implements State
 {
   @Override public void onBorrow(Vinyl vinyl)
   {
-    vinyl.setState(new VinylBorrow());
+    vinyl.setState(new Borrowed());
   }
 
   @Override public void onReserved(Vinyl vinyl)
   {
-    vinyl.setState(new VinylReserve());
+    vinyl.setState(new Reserved());
   }
 
   @Override public void onReturn(Vinyl vinyl)

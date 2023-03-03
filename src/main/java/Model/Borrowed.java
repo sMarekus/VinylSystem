@@ -9,11 +9,11 @@ public class Borrowed implements State
 
   @Override public void onReserved(Vinyl vinyl)
   {
-    vinyl.setState(new VinylReserve());
+    vinyl.setState(new Reserved());
   }
 
   @Override public void onReturn(Vinyl vinyl)
   {
-    vinyl.setState(new VinylAvailable());
+    vinyl.setState(new Available());
   }
 }
