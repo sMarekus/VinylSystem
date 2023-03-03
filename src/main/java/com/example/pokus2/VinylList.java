@@ -23,17 +23,17 @@ public class VinylList
     vinyls.add(new Vinyl("7th Or St. Tammany", "$uicideboy$", 2015));
     vinyls.add(new Vinyl("Gray/Grey", "$uicideboy$", 2015));
 
-    vinyl = FXCollections.observableArrayList(
-        vinyls.get(0).getTitle(),
-        vinyls.get(1).getTitle(),
-        vinyl3.getTitle(),
-        vinyl4.getTitle(),
-        vinyl5.getTitle(),
-        vinyl6.getTitle(),
-        vinyl7.getTitle(),
-        vinyl8.getTitle(),
-        vinyl9.getTitle(),
-        vinyl10.getTitle()
+    vinylsObservable = FXCollections.observableArrayList(
+        vinyls.get(0),
+        vinyls.get(1),
+        vinyls.get(2),
+        vinyls.get(3),
+        vinyls.get(4),
+        vinyls.get(5),
+        vinyls.get(6),
+        vinyls.get(7),
+        vinyls.get(8),
+        vinyls.get(9)
     );
   }
 
@@ -60,7 +60,7 @@ public class VinylList
   Vinyl vinyl9 = new Vinyl("7th Or St. Tammany", "$uicideboy$", 2015);
   Vinyl vinyl10 = new Vinyl("Gray/Grey", "$uicideboy$", 2015);
 
-  public ObservableList<String> vinyl;
+  public ObservableList<Vinyl> vinylsObservable;
 
   public Vinyl getVinylByName(String name){
     return vinyls.stream().filter(vinyl -> vinyl.getTitle().equals(name)).findFirst().orElse(null);

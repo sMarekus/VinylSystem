@@ -5,16 +5,14 @@
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox alignment="CENTER" prefHeight="259.0" prefWidth="482.0" spacing="20.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokus2.VinylViewController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
-    </padding>
-    <children>
-        <BorderPane prefHeight="200.0" prefWidth="200.0">
+<AnchorPane fx:id="anchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokus2.VinylViewController">
+   <children>
+        <BorderPane layoutX="21.0" layoutY="56.0" prefHeight="313.0" prefWidth="558.0">
             <left>
                 <Button fx:id="reserve" mnemonicParsing="false" onAction="#reserve" prefWidth="90.0" text="Reserve" BorderPane.alignment="CENTER" />
             </left>
@@ -27,7 +25,7 @@
             <top>
                 <VBox spacing="10.0" BorderPane.alignment="CENTER">
                     <children>
-                        <ComboBox fx:id="comboBox" onAction="#comboBox" prefHeight="26.0" prefWidth="463.0" />
+                        <ComboBox fx:id="comboBox" onAction="#comboBox" prefHeight="26.0" prefWidth="619.0" promptText="Select vinyl" />
                         <HBox>
                             <children>
                                 <Label text="Status: ">
@@ -35,27 +33,29 @@
                                         <Insets right="10.0" />
                                     </HBox.margin>
                                 </Label>
-                                <Label text="Available" />
+                                <Label fx:id="status" />
                             </children>
                         </HBox>
                     </children>
                 </VBox>
             </top>
             <bottom>
-                <HBox prefHeight="38.0" prefWidth="442.0" BorderPane.alignment="CENTER">
+                <HBox prefHeight="38.0" prefWidth="558.0" BorderPane.alignment="CENTER">
                     <children>
                         <Label prefHeight="20.0" prefWidth="72.0" text="Name: ">
                             <padding>
                                 <Insets right="10.0" top="3.0" />
-                            </padding></Label>
+                            </padding>
+                  </Label>
                         <TextField fx:id="nameField" onAction="#nameField" />
                         <Button fx:id="listGui" mnemonicParsing="false" onAction="#listGui" prefHeight="26.0" prefWidth="90.0" text="List Gui">
                             <HBox.margin>
-                                <Insets left="190.0" />
-                            </HBox.margin></Button>
+                                <Insets left="240.0" />
+                            </HBox.margin>
+                  </Button>
                     </children>
                 </HBox>
             </bottom>
         </BorderPane>
-    </children>
-</VBox>
+   </children>
+</AnchorPane>

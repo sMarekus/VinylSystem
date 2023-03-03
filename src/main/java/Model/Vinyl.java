@@ -59,4 +59,52 @@ public class Vinyl
   {
     return state;
   }
+
+  public SimpleStringProperty titleProperty() {
+    return title;
+  }
+
+  public void setTitle(String title) {
+    this.title.set(title);
+  }
+
+  public String getArtist() {
+    return artist.get();
+  }
+
+  public SimpleStringProperty artistProperty() {
+    return artist;
+  }
+
+  public void setArtist(String artist) {
+    this.artist.set(artist);
+  }
+
+  public int getYear() {
+    return year.get();
+  }
+
+  public SimpleIntegerProperty yearProperty() {
+    return year;
+  }
+
+  public void setYear(int year) {
+    this.year.set(year);
+  }
+
+  public SimpleStringProperty reservedByProperty() {
+    return reservedBy;
+  }
+
+  public void setReservedBy(String reservedBy) {
+    this.reservedBy.set(reservedBy);
+  }
+
+  public SimpleStringProperty borrowedByProperty() {
+    return borrowedBy;
+  }
+
+  public void setBorrowedBy(String borrowedBy) {
+    this.borrowedBy.set(borrowedBy);
+  }
 }
