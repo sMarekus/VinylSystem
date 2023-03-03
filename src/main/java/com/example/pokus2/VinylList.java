@@ -22,7 +22,7 @@ public class VinylList
     vinyls.add(new Vinyl("Eternal Grey", "$uicideboy$", 2016));
     vinyls.add(new Vinyl("7th Or St. Tammany", "$uicideboy$", 2015));
     vinyls.add(new Vinyl("Gray/Grey", "$uicideboy$", 2015));
-    
+
     vinyl = FXCollections.observableArrayList(
         vinyls.get(0).getTitle(),
         vinyls.get(1).getTitle(),

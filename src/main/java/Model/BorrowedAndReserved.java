@@ -1,6 +1,6 @@
 package Model;
 
-public class BorrowedAndReturn implements State
+public class BorrowedAndReserved implements State
 {
 
   @Override public void onBorrow(Vinyl vinyl)

@@ -26,26 +26,32 @@ public class Vinyl
     this.borrowedBy = new SimpleStringProperty("");
   }
 
-  public void borrow() {
-    if (borrowedBy.equals("") && reservedBy.equals("")) {
-
-    }
+  public void borrow(String name) {
+      state.onBorrow(this);
   }
 
-  public void reserve() {
-
+  public void reserve(String name) {
+      state.onReserved(this);
   }
 
   public void returnVinyl() {
-
+      state.onReturn(this);
   }
 
   public void setState(State state) {
-    this.state = state;
+      this.state = state;
   }
 
   public String getTitle()
   {
     return title.get();
+  }
+
+  public String getBorrowedBy() {
+    return borrowedBy.get();
+  }
+
+  public String getReservedBy() {
+    return borrowedBy.get();
   }
 }

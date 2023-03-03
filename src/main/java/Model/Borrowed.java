@@ -4,12 +4,12 @@ public class Borrowed implements State
 {
   @Override public void onBorrow(Vinyl vinyl)
   {
-
+    // Empty
   }
 
   @Override public void onReserved(Vinyl vinyl)
   {
-    vinyl.setState(new Reserved());
+
   }
 
   @Override public void onReturn(Vinyl vinyl)
