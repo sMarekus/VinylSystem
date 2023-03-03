@@ -27,8 +27,8 @@ public class Vinyl
   }
 
   public void borrow() {
-    if (borrowedBy.equals("") && borrowedBy) {
-
+    if (borrowedBy.equals("") && reservedBy.equals("")) {
+      
     }
   }
 
