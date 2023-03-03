@@ -21,13 +21,13 @@ public class Vinyl
     this.title = new SimpleStringProperty(title);
     this.artist = new SimpleStringProperty(artist);
     this.year = new SimpleIntegerProperty(year);
-    this.state = new
+    this.state = new Available();
     this.reservedBy = new SimpleStringProperty("");
     this.borrowedBy = new SimpleStringProperty("");
   }
 
   public void borrow() {
-    if (borrowedBy.equals("") && borrowedBy) {
+    if (borrowedBy.equals("") && reservedBy.equals("")) {
 
     }
   }
@@ -44,4 +44,8 @@ public class Vinyl
 
   }
 
+  public String getTitle()
+  {
+    return this.title;
+  }
 }
