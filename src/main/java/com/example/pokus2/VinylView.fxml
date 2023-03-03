@@ -51,7 +51,7 @@
                         <TextField fx:id="nameField" onAction="#nameField" />
                         <Button fx:id="listGui" mnemonicParsing="false" onAction="#listGui" prefHeight="26.0" prefWidth="90.0" text="List Gui">
                             <HBox.margin>
-                                <Insets left="190.0" />
+                                <Insets left="190.0"/>
                             </HBox.margin></Button>
                     </children>
                 </HBox>
