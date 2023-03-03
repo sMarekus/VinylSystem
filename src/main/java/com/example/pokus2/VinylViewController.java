@@ -1,8 +1,7 @@
 package com.example.pokus2;
 
+import Model.State;
 import Model.Vinyl;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -15,6 +14,7 @@ public class VinylViewController
   private Vinyl vinyl;
   private VinylList vinylList;
 
+  private State state;
 
   @FXML
   private Button aReturn;
@@ -40,31 +40,19 @@ public class VinylViewController
 
   @FXML
   void aReturn(ActionEvent event) {
-    /*String vinylName = (String) comboBox.getValue();
-    for(int i = 0; i<9; i++){
-      if(vinylName.equals((String) vinyl.getVinyl(i).getTitle())){
-        vinyl.getVinyl(i).setState(Vinyl.State.AVAILABLE);
-      }
-    }
-
-     */
+    vinyl.returnVinyl();
   }
 
   @FXML
   void borrow(ActionEvent event) {
-    /*String vinylName = (String) comboBox.getValue();
-    for(int i = 0; i<9; i++){
-      if(vinylName.equals((String) vinyl.getVinyl(i).getTitle())){
-        vinyl.getVinyl(i).setState(Vinyl.State.BORROWED);
-      }
-    }
+    vinyl.borrow(nameField.getText());
 
-     */
   }
 
   @FXML
   void comboBox(ActionEvent event) {
-//    status.setText(vinylList.getVinylByName(comboBox.getValue()).isAvailable());
+    //status.setText(String.valueOf(vinyl.getState(vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem()))));
+    status.setText(String.valueOf(vinylList.getVinylByName(comboBox.getValue()).getState()));
   }
 
   @FXML
@@ -79,15 +67,8 @@ public class VinylViewController
 
   @FXML
   void reserve(ActionEvent event) {
-    /*String vinylName = (String) comboBox.getValue();
-    for(int i = 0; i<9; i++){
-      if(vinylName.equals((String) vinyl.getVinyl(i).getTitle())){
-        vinyl.getVinyl(i).setState(Vinyl.State.RESERVED);
-      }
-    }
-
-     */
-
+    vinyl.reserve(nameField.getText());
+    //System.out.println(vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem()));
   }
 
 
@@ -96,9 +77,6 @@ public class VinylViewController
     vinylList=new VinylList();
 
     comboBox.setItems(vinylList.vinyl);
-
-
-
 
   }
 }

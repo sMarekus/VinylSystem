@@ -23,7 +23,7 @@ public class MyApplication extends Application
       loader.setLocation(fxmlurl);
       Parent root = loader.load();
       Scene scene = new Scene(root);
-      primaryStage.setTitle("sabdbas");
+      primaryStage.setTitle("Assignment 1");
       primaryStage.setScene(scene);
       primaryStage.show();
     }

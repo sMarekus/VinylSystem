@@ -41,11 +41,11 @@ public class Vinyl
   }
 
   public void setState(State state) {
-
+    this.state = state;
   }
 
   public String getTitle()
   {
-    return this.title;
+    return title.get();
   }
 }
