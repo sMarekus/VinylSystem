@@ -27,7 +27,7 @@ public class Vinyl
   }
 
   public void borrow(String name) {
-      state.onBorrow(this);
+      state.onBorrow(this,name);
   }
 
   public void reserve(String name) {

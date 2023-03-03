@@ -6,7 +6,7 @@ public class Return implements State
     vinyl.setState(new Available());
   }
 
-  @Override public void onBorrow(Vinyl vinyl){
+  @Override public void onBorrow(Vinyl vinyl,String name){
 
   }
 

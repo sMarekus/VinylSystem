@@ -2,7 +2,7 @@ package Model;
 
 public class Available implements State
 {
-  @Override public void onBorrow(Vinyl vinyl)
+  @Override public void onBorrow(Vinyl vinyl,String name)
   {
     vinyl.setState(new Borrowed());
   }

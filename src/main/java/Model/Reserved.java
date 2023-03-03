@@ -4,7 +4,7 @@ import java.util.WeakHashMap;
 
 public class Reserved implements State
 {
-  @Override public void onBorrow(Vinyl vinyl)
+  @Override public void onBorrow(Vinyl vinyl,String name)
   {
     if (vinyl.getBorrowedBy().equals(vinyl.getReservedBy())) {
       vinyl.setState(new Borrowed());
