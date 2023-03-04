@@ -12,8 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.StringConverter;
 
 import java.io.IOException;
-
-public class VinylViewController
+public class  VinylViewController
 {
   private Vinyl vinyl;
   private VinylList vinylList;
