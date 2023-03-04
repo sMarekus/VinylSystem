@@ -31,7 +31,7 @@ public class Vinyl
   }
 
   public void reserve(String name) {
-      state.onReserved(this);
+      state.onReserved(this, name);
   }
 
   public void returnVinyl() {
@@ -97,6 +97,7 @@ public class Vinyl
   }
 
   public void setReservedBy(String reservedBy) {
+    System.out.println(reservedBy);
     this.reservedBy.set(reservedBy);
   }
 

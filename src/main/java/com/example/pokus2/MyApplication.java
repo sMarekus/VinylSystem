@@ -27,7 +27,6 @@ public class MyApplication extends Application
       primaryStage.setScene(scene);
       primaryStage.show();
     }
-
   }
 
   public static void main(String[] args)

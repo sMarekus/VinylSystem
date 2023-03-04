@@ -10,7 +10,7 @@ public class Return implements State
 
   }
 
-  @Override public void onReserved(Vinyl vinyl){
+  @Override public void onReserved(Vinyl vinyl, String name){
 
   }
 

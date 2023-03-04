@@ -8,7 +8,7 @@ public class BorrowedAndReserved implements State
     //empty
   }
 
-  @Override public void onReserved(Vinyl vinyl)
+  @Override public void onReserved(Vinyl vinyl, String name)
   {
     //empty
   }

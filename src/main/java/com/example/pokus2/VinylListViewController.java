@@ -18,6 +18,7 @@ import javafx.util.StringConverter;
 import java.io.IOException;
 import java.net.URL;
 import java.util.List;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class VinylListViewController implements Initializable
@@ -55,10 +56,10 @@ public class VinylListViewController implements Initializable
     pane2.getChildren().setAll(anchor);
   }
 
+
   @Override public void initialize(URL location, ResourceBundle resources)
   {
-    vinylList=new VinylList();
-//    tableView = new TableView<>();
+    vinylList= VinylList.getInstance();
 
 //    titleCol = new TableColumn<>("Titlee");
     titleCol.setCellValueFactory(f -> new SimpleObjectProperty<>(f.getValue().getTitle()));
@@ -73,10 +74,11 @@ public class VinylListViewController implements Initializable
     statusCol.setCellValueFactory(f -> new SimpleObjectProperty<>(f.getValue().getState().toString()));
 
 //    nameCol = new TableColumn<>("name");
-    nameCol.setCellValueFactory(f -> new SimpleObjectProperty<>("jakub"));
+    nameCol.setCellValueFactory(f -> new SimpleObjectProperty<>(Objects.equals(f.getValue().getState().toString(), "Available") ? "" : Objects.equals(f.getValue().getState().toString(), "Borrowed") || Objects.equals(f.getValue().getState().toString(), "BorrowedAndReserved") ? f.getValue().getBorrowedBy() : f.getValue().getReservedBy()));
 
-    tableView.setItems(vinylList.vinylsObservable);
+    tableView.setItems(vinylList.getVinyls());
 
+    System.out.println(vinylList.getVinyls().get(0).getReservedBy() + vinylList.getVinyls().get(0).getBorrowedBy() + "test");
   }
 
 }

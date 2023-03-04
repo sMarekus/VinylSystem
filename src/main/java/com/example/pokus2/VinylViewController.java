@@ -57,6 +57,7 @@ public class VinylViewController
     vinyl = vinylList.getVinylByName(comboBox.getValue().getTitle());
     vinyl.borrow(nameField.getText());
     status.setText(vinyl.getState().toString());
+    System.out.println(vinylList.getVinyls().get(0).getState());
   }
 
   @FXML
@@ -87,7 +88,7 @@ public class VinylViewController
 
   public void initialize()
   {
-    vinylList=new VinylList();
+    vinylList= VinylList.getInstance();
 
     comboBox.setConverter(new StringConverter<Vinyl>() {
       @Override
@@ -100,6 +101,6 @@ public class VinylViewController
         return null;
       }
     });
-    comboBox.setItems(vinylList.vinylsObservable);
+    comboBox.setItems(vinylList.getVinyls());
   }
 }
