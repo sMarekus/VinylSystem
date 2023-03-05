@@ -1,7 +1,5 @@
 package Model;
 
-import View.VinylList;
-
 import java.util.Objects;
 
 public class Borrowed implements State
@@ -24,7 +22,7 @@ public class Borrowed implements State
     if(name.equals(vinyl.getReservedBy()) || name.equals(vinyl.getBorrowedBy())){
       vinyl.setState(new Available());
       if(vinyl.isToBeRemoved()) {
-        VinylList.getInstance().getVinyls().removeIf(obj -> Objects.equals(obj.getTitle(), vinyl.getTitle()));
+        ModelManager.getInstance().getVinyls().removeIf(obj -> Objects.equals(obj.getTitle(), vinyl.getTitle()));
       }
     }
 

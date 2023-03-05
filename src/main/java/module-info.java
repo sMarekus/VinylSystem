@@ -6,4 +6,6 @@ module com.example.pokus2 {
   exports com.example.pokus2;
   exports View;
   opens View to javafx.fxml;
+  exports Model;
+  opens Model to javafx.fxml;
 }

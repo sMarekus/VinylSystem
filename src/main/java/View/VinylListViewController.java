@@ -1,7 +1,7 @@
 package View;
 
 import Model.Vinyl;
-import View.VinylList;
+import Model.ModelManager;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.ListChangeListener;
 import javafx.event.ActionEvent;
@@ -21,7 +21,7 @@ public class VinylListViewController implements Initializable
 {
 
   private Vinyl vinyl;
-  private VinylList vinylList;
+  private ModelManager modelManager;
   @FXML
   private TableView<Vinyl> tableView;
 
@@ -55,7 +55,7 @@ public class VinylListViewController implements Initializable
 
   @Override public void initialize(URL location, ResourceBundle resources)
   {
-    vinylList = VinylList.getInstance();
+    modelManager = ModelManager.getInstance();
 
     titleCol.setCellValueFactory(f -> new SimpleObjectProperty<>(f.getValue().getTitle()));
     artistCol.setCellValueFactory(f -> new SimpleObjectProperty<>(f.getValue().getArtist()));
@@ -64,11 +64,12 @@ public class VinylListViewController implements Initializable
 
     nameCol.setCellValueFactory(f -> new SimpleObjectProperty<>(Objects.equals(f.getValue().getState().toString(), "Available") ? "" : Objects.equals(f.getValue().getState().toString(), "Borrowed") || Objects.equals(f.getValue().getState().toString(), "BorrowedAndReserved") ? f.getValue().getBorrowedBy() : f.getValue().getReservedBy()));
 
-    tableView.setItems(vinylList.getVinyls());
+    tableView.setItems(modelManager.getVinyls());
 
-    System.out.println(vinylList.getVinyls().get(0).getReservedBy() + vinylList.getVinyls().get(0).getBorrowedBy() + "test");
+    System.out.println(
+        modelManager.getVinyls().get(0).getReservedBy() + modelManager.getVinyls().get(0).getBorrowedBy() + "test");
 
-    vinylList.getVinyls().addListener((ListChangeListener<Vinyl>) c -> {
+    modelManager.getVinyls().addListener((ListChangeListener<Vinyl>) c -> {
       System.out.println("neide.");
       tableView.refresh();
     });

@@ -3,7 +3,7 @@ package View;
 import Model.Available;
 import Model.State;
 import Model.Vinyl;
-import View.VinylList;
+import Model.ModelManager;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,7 +17,7 @@ import java.util.Objects;
 public class  VinylViewController
 {
   private Vinyl vinyl;
-  private VinylList vinylList;
+  private ModelManager modelManager;
 
   private State state;
   @FXML
@@ -51,7 +51,7 @@ public class  VinylViewController
 
   @FXML
   void aReturn(ActionEvent event) {
-    vinyl = vinylList.getVinylByName(comboBox.getValue().getTitle());
+    vinyl = modelManager.getVinylByName(comboBox.getValue().getTitle());
     vinyl.returnVinyl(nameField.getText());
     status.setText(vinyl.getState().toString());
   }
@@ -59,7 +59,7 @@ public class  VinylViewController
   @FXML
   void borrow(ActionEvent event) {
     System.out.println("BORROW");
-    vinyl = vinylList.getVinylByName(comboBox.getValue().getTitle());
+    vinyl = modelManager.getVinylByName(comboBox.getValue().getTitle());
     vinyl.borrow(nameField.getText());
     status.setText(vinyl.getState().toString());
   }
@@ -67,7 +67,7 @@ public class  VinylViewController
   @FXML
   void reserve(ActionEvent event) {
     System.out.println("RESERVE");
-    vinyl = vinylList.getVinylByName(comboBox.getValue().getTitle());
+    vinyl = modelManager.getVinylByName(comboBox.getValue().getTitle());
     vinyl.reserve(nameField.getText());
     status.setText(vinyl.getState().toString());
   }
@@ -75,7 +75,7 @@ public class  VinylViewController
   @FXML
   void comboBox(ActionEvent event) {
     //status.setText(String.valueOf(vinyl.getState(vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem()))));
-    vinyl = vinylList.getVinylByName(comboBox.getSelectionModel().getSelectedItem().getTitle());
+    vinyl = modelManager.getVinylByName(comboBox.getSelectionModel().getSelectedItem().getTitle());
     status.setText(vinyl.getState().toString());
   }
 
@@ -89,7 +89,7 @@ public class  VinylViewController
   void removeVinyl(ActionEvent event) {
     System.out.println("REMOVED");
     if(Objects.equals(vinyl.getState().toString(), "Available")) {
-      vinylList.getVinyls().removeIf(obj -> Objects.equals(obj.getTitle(), comboBox.getValue().getTitle()));
+      modelManager.getVinyls().removeIf(obj -> Objects.equals(obj.getTitle(), comboBox.getValue().getTitle()));
     } else {
       vinyl.setToBeRemoved(true);
     }
@@ -103,7 +103,7 @@ public class  VinylViewController
 
   public void initialize()
   {
-    vinylList= VinylList.getInstance();
+    modelManager = ModelManager.getInstance();
 
     comboBox.setConverter(new StringConverter<Vinyl>() {
       @Override
@@ -116,6 +116,6 @@ public class  VinylViewController
         return null;
       }
     });
-    comboBox.setItems(vinylList.getVinyls());
+    comboBox.setItems(modelManager.getVinyls());
   }
 }

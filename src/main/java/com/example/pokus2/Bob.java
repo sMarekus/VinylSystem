@@ -1,6 +1,6 @@
 package com.example.pokus2;
 
-import View.VinylList;
+import Model.ModelManager;
 
 import java.util.Random;
 
@@ -12,20 +12,20 @@ public class Bob implements Runnable{
         Random rand1 = new Random();
         while(true){
             int num = rand1.nextInt(1,4);
-            int numOfVinyl = rand1.nextInt(0, VinylList.getInstance().getVinyls().size());
+            int numOfVinyl = rand1.nextInt(0, ModelManager.getInstance().getVinyls().size());
             int sleep = rand1.nextInt(2000, 3000);
             switch(num){
                 case 1:
-                    VinylList.getInstance().getVinyl(numOfVinyl).borrow(name);
+                    ModelManager.getInstance().getVinyl(numOfVinyl).borrow(name);
                     System.out.println(num);
                     break;
                 case 2:
-                    VinylList.getInstance().getVinyl(numOfVinyl).reserve(name);
+                    ModelManager.getInstance().getVinyl(numOfVinyl).reserve(name);
                     System.out.println(num);
                     break;
 
                 case 3:
-                    VinylList.getInstance().getVinyl(numOfVinyl).returnVinyl(name);
+                    ModelManager.getInstance().getVinyl(numOfVinyl).returnVinyl(name);
                     System.out.println(num);
                     break;
             }
