@@ -74,7 +74,7 @@ public class VinylListViewController implements Initializable
     statusCol.setCellValueFactory(f -> new SimpleObjectProperty<>(f.getValue().getState().toString()));
 
 //    nameCol = new TableColumn<>("name");
-    nameCol.setCellValueFactory(f -> new SimpleObjectProperty<>(Objects.equals(f.getValue().getState().toString(), "Available") ? "" : Objects.equals(f.getValue().getState().toString(), "Borrowed") || Objects.equals(f.getValue().getState().toString(), "BorrowedAndReserved") ? f.getValue().getBorrowedBy() : f.getValue().getReservedBy()));
+    nameCol.setCellValueFactory(f -> new SimpleObjectProperty<>(Objects.equals(f.getValue().getState().toString(), "Available") ? "" : f.getValue().getReservedBy()));
 
     tableView.setItems(vinylList.getVinyls());
 

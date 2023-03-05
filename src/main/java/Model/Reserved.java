@@ -1,5 +1,8 @@
 package Model;
 
+import com.example.pokus2.VinylList;
+
+import java.util.Objects;
 import java.util.WeakHashMap;
 
 public class Reserved implements State
@@ -19,7 +22,10 @@ public class Reserved implements State
 
   @Override public void onReturn(Vinyl vinyl)
   {
-    vinyl.setState(new Return());
+    vinyl.setState(new Available());
+    if(vinyl.isToBeRemoved()) {
+      VinylList.getInstance().getVinyls().removeIf(obj -> Objects.equals(obj.getTitle(), vinyl.getTitle()));
+    }
   }
 
   public String toString(){

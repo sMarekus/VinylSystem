@@ -12,6 +12,8 @@ import javafx.scene.layout.AnchorPane;
 import javafx.util.StringConverter;
 
 import java.io.IOException;
+import java.util.Objects;
+
 public class  VinylViewController
 {
   private Vinyl vinyl;
@@ -38,6 +40,9 @@ public class  VinylViewController
   private Button listGui;
 
   @FXML
+  private Button removeVinyl;
+
+  @FXML
   private TextField nameField;
   private String name;
 
@@ -53,10 +58,18 @@ public class  VinylViewController
 
   @FXML
   void borrow(ActionEvent event) {
+    System.out.println("BORROW");
     vinyl = vinylList.getVinylByName(comboBox.getValue().getTitle());
     vinyl.borrow(nameField.getText());
     status.setText(vinyl.getState().toString());
-    System.out.println(vinylList.getVinyls().get(0).getState());
+  }
+
+  @FXML
+  void reserve(ActionEvent event) {
+    System.out.println("RESERVE");
+    vinyl = vinylList.getVinylByName(comboBox.getValue().getTitle());
+    vinyl.reserve(nameField.getText());
+    status.setText(vinyl.getState().toString());
   }
 
   @FXML
@@ -73,15 +86,18 @@ public class  VinylViewController
   }
 
   @FXML
-  void nameField(ActionEvent event) {
-    //name = nameField.getText();
+  void removeVinyl(ActionEvent event) {
+    System.out.println("REMOVED");
+    if(Objects.equals(vinyl.getState().toString(), "Available")) {
+      vinylList.getVinyls().removeIf(obj -> Objects.equals(obj.getTitle(), comboBox.getValue().getTitle()));
+    } else {
+      vinyl.setToBeRemoved(true);
+    }
   }
 
   @FXML
-  void reserve(ActionEvent event) {
-    vinyl = vinylList.getVinylByName(comboBox.getValue().getTitle());
-    vinyl.reserve(nameField.getText());
-    status.setText(vinyl.getState().toString());
+  void nameField(ActionEvent event) {
+    //name = nameField.getText();
   }
 
 

@@ -16,6 +16,7 @@ public class Vinyl
   private State state;
   private SimpleStringProperty reservedBy;
   private SimpleStringProperty borrowedBy;
+  private boolean toBeRemoved;
 
   public Vinyl(String title, String artist, int year){
     this.title = new SimpleStringProperty(title);
@@ -24,6 +25,7 @@ public class Vinyl
     this.state = new Available();
     this.reservedBy = new SimpleStringProperty("");
     this.borrowedBy = new SimpleStringProperty("");
+    this.toBeRemoved = false;
   }
 
   public void borrow(String name) {
@@ -97,7 +99,7 @@ public class Vinyl
   }
 
   public void setReservedBy(String reservedBy) {
-    System.out.println(reservedBy);
+    System.out.println("jebem " + reservedBy);
     this.reservedBy.set(reservedBy);
   }
 
@@ -107,5 +109,13 @@ public class Vinyl
 
   public void setBorrowedBy(String borrowedBy) {
     this.borrowedBy.set(borrowedBy);
+  }
+
+  public boolean isToBeRemoved() {
+    return toBeRemoved;
+  }
+
+  public void setToBeRemoved(boolean toBeRemoved) {
+    this.toBeRemoved = toBeRemoved;
   }
 }

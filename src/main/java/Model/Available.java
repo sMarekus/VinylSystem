@@ -7,6 +7,7 @@ public class Available implements State
   @Override public void onBorrow(Vinyl vinyl,String name)
   {
     if(!Objects.equals(name, "")) {
+      System.out.println("borrow name " + name);
       vinyl.setState(new Borrowed());
       vinyl.setBorrowedBy(name);
     }
@@ -15,8 +16,8 @@ public class Available implements State
   @Override public void onReserved(Vinyl vinyl, String name)
   {
     if(!Objects.equals(name, "")) {
+      System.out.println("reserve name " + name);
       vinyl.setState(new Reserved());
-      System.out.println(name);
       vinyl.setReservedBy(name);
     }
   }

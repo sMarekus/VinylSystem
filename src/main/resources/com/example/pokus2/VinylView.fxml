@@ -42,15 +42,20 @@
             <bottom>
                 <HBox prefHeight="38.0" prefWidth="558.0" BorderPane.alignment="CENTER">
                     <children>
-                        <Label prefHeight="20.0" prefWidth="72.0" text="Name: ">
+                        <Label prefHeight="20.0" prefWidth="78.0" text="Name: ">
                             <padding>
                                 <Insets right="10.0" top="3.0" />
                             </padding>
                   </Label>
                         <TextField fx:id="nameField" onAction="#nameField" />
+                  <Button fx:id="removeVinyl" mnemonicParsing="false" onAction="#removeVinyl" prefHeight="26.0" prefWidth="90.0" text="Remove">
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Button>
                         <Button fx:id="listGui" mnemonicParsing="false" onAction="#listGui" prefHeight="26.0" prefWidth="90.0" text="List Gui">
                             <HBox.margin>
-                                <Insets left="240.0" />
+                                <Insets left="150.0" />
                             </HBox.margin>
                   </Button>
                     </children>

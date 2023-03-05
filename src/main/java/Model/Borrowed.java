@@ -1,5 +1,7 @@
 package Model;
 
+import com.example.pokus2.VinylList;
+
 import java.util.Objects;
 
 public class Borrowed implements State
@@ -20,6 +22,9 @@ public class Borrowed implements State
   @Override public void onReturn(Vinyl vinyl)
   {
     vinyl.setState(new Available());
+    if(vinyl.isToBeRemoved()) {
+      VinylList.getInstance().getVinyls().removeIf(obj -> Objects.equals(obj.getTitle(), vinyl.getTitle()));
+    }
   }
 
   public String toString(){
