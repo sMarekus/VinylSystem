@@ -1,10 +1,8 @@
-package com.example.pokus2;
+package View;
 
 import Model.Vinyl;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
-import java.util.ArrayList;
 
 public class VinylList
 {

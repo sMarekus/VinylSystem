@@ -1,6 +1,6 @@
 package Model;
 
-import com.example.pokus2.VinylList;
+import View.VinylList;
 
 import java.util.Objects;
 

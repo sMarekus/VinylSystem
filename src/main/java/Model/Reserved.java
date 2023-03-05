@@ -1,9 +1,8 @@
 package Model;
 
-import com.example.pokus2.VinylList;
+import View.VinylList;
 
 import java.util.Objects;
-import java.util.WeakHashMap;
 
 public class Reserved implements State
 {

@@ -1,9 +1,9 @@
-package com.example.pokus2;
+package View;
 
 import Model.Available;
 import Model.State;
 import Model.Vinyl;
-import javafx.beans.property.SimpleObjectProperty;
+import View.VinylList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

@@ -5,7 +5,7 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="pane2" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pokus2.VinylListViewController">
+<AnchorPane fx:id="pane2" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.VinylListViewController">
     <children>
         <TableView fx:id="tableView" layoutX="7.0" layoutY="25.0" prefHeight="301.0" prefWidth="587.0">
             <columns>

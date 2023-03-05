@@ -1,5 +1,7 @@
 package com.example.pokus2;
 
+import View.VinylList;
+
 import java.util.Random;
 
 public class Bob implements Runnable{

@@ -1,13 +1,14 @@
-package com.example.pokus2;
+package View;
 
 //import View.ViewHandler;
+import com.example.pokus2.Bob;
+import com.example.pokus2.Wendy;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-import java.io.IOException;
 import java.net.URL;
 
 public class MyApplication extends Application
