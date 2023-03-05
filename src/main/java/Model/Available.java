@@ -22,7 +22,7 @@ public class Available implements State
     }
   }
 
-  @Override public void onReturn(Vinyl vinyl)
+  @Override public void onReturn(Vinyl vinyl, String name)
   {
 
   }

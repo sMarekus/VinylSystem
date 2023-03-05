@@ -20,11 +20,13 @@ public class Reserved implements State
   }
 
 
-  @Override public void onReturn(Vinyl vinyl)
+  @Override public void onReturn(Vinyl vinyl, String name)
   {
+    if(name.equals(vinyl.getReservedBy()) || name.equals(vinyl.getBorrowedBy())){
     vinyl.setState(new Available());
     if(vinyl.isToBeRemoved()) {
       VinylList.getInstance().getVinyls().removeIf(obj -> Objects.equals(obj.getTitle(), vinyl.getTitle()));
+    }
     }
   }
 

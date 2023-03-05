@@ -36,8 +36,8 @@ public class Vinyl
       state.onReserved(this, name);
   }
 
-  public void returnVinyl() {
-      state.onReturn(this);
+  public void returnVinyl(String name) {
+      state.onReturn(this, name);
   }
 
   public void setState(State state) {
@@ -54,7 +54,7 @@ public class Vinyl
   }
 
   public String getReservedBy() {
-    return borrowedBy.get();
+    return reservedBy.get();
   }
 
   public State getState()
@@ -99,7 +99,6 @@ public class Vinyl
   }
 
   public void setReservedBy(String reservedBy) {
-    System.out.println("jebem " + reservedBy);
     this.reservedBy.set(reservedBy);
   }
 

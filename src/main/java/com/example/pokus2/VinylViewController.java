@@ -52,7 +52,7 @@ public class  VinylViewController
   @FXML
   void aReturn(ActionEvent event) {
     vinyl = vinylList.getVinylByName(comboBox.getValue().getTitle());
-    vinyl.returnVinyl();
+    vinyl.returnVinyl(nameField.getText());
     status.setText(vinyl.getState().toString());
   }
 

@@ -26,11 +26,22 @@ public class MyApplication extends Application
       primaryStage.setTitle("Assignment 1");
       primaryStage.setScene(scene);
       primaryStage.show();
+
+      Bob bob = new Bob();
+      Wendy wendy = new Wendy();
+
+      Thread thread1 = new Thread(bob);
+      Thread thread2 = new Thread(wendy);
+
+      thread1.start();
+      thread2.start();
     }
   }
 
   public static void main(String[] args)
   {
     launch(args);
+
+
   }
 }

@@ -6,5 +6,5 @@ public interface State
 
    void onReserved(Vinyl vinyl, String name);
 
-   void onReturn(Vinyl vinyl);
+   void onReturn(Vinyl vinyl, String name);
 }
